@@ -15,16 +15,11 @@
 </head>
 <body>
 <h1 id="a-diffusion-model-for-voice-conversion-via-visual-information-bottlenecks-demos">A DIFFUSION MODEL FOR VOICE CONVERSION VIA VISUAL INFORMATION BOTTLENECKS (Demos)</h1>
+<p>Demos are generated only based on the audios of the source speakers. Videos are only for demonstration purposes here.</p>
 <h2 id="seen-speaker-setting">1. Seen speaker setting</h2>
 <h3 id="conversion-demos-b-16">1.1. Conversion demos (<span class="math inline"><em>B</em> = 16</span>)</h3>
 <table>
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 19%" />
-<col style="width: 19%" />
-<col style="width: 19%" />
-<col style="width: 19%" />
-</colgroup>
+
 <thead>
 <tr class="header">
 <th>Source Speech</th>
@@ -36,28 +31,28 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td>S1 (male): bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
+<td>S1 (male) <br> bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
-<td>S10 (male): lay blue at a two now <br> <video controls width=200px><source src="./demo/original/s10/lbaa2n.mp4" type="video/mp4"/></video></td>
+<td>S10 (male) <br> lay blue at a two now <br> <video controls width=200px><source src="./demo/original/s10/lbaa2n.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="odd">
-<td>S4 (female): set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
+<td>S4 (female) <br> set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s5.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
-<td>S16 (female): place blue at a five now <br> <video controls width=200px><source src="./demo/original/s16/pbaa5n.mp4" type="video/mp4"/></video></td>
+<td>S16 (female) <br> place blue at a five now <br> <video controls width=200px><source src="./demo/original/s16/pbaa5n.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s5.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s7.mp4" type="video/mp4"/></video></td>
@@ -67,23 +62,18 @@
 </table>
 <h3 id="effects-of-free-bits">1.2. Effects of free bits</h3>
 <table>
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 13%" />
-<col style="width: 27%" />
-<col style="width: 27%" />
-</colgroup>
+
 <thead>
 <tr class="header">
 <th>Source Speech</th>
-<th>Free Bits at 2nd Training Stage</th>
+<th>Free Bits <br> (2nd Training Stage)</th>
 <th>Target S2 (male) <br> <video controls width=200px><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video></th>
 <th>Target S7 (female) <br> <video controls width=200px><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>S1 (male): bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
+<td>S1 (male) <br> bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
 <td>0</td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
@@ -131,7 +121,7 @@
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="odd">
-<td>S4 (female): set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
+<td>S4 (female) <br> set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
 <td>0</td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
@@ -183,13 +173,7 @@
 <h2 id="zero-shot-setting">2. Zero-shot Setting</h2>
 <h3 id="conversion-demos-b-8">2.1. Conversion demos (<span class="math inline"><em>B</em> = 8</span>)</h3>
 <table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 18%" />
-<col style="width: 18%" />
-<col style="width: 18%" />
-<col style="width: 19%" />
-</colgroup>
+
 <thead>
 <tr class="header">
 <th>Source Speech</th>
@@ -201,28 +185,28 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td>S1 (seen male): bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
+<td>S1 (seen male) <br> bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
-<td>S10 (unseen male): lay blue at a two now <br> <video controls width=200px><source src="./demo/original/s10/lbaa2n.mp4" type="video/mp4"/></video></td>
+<td>S10 (unseen male) <br> lay blue at a two now <br> <video controls width=200px><source src="./demo/original/s10/lbaa2n.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="odd">
-<td>S4 (seen female): set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
+<td>S4 (seen female) <br> set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s5.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
-<td>S16 (unseen female): place blue at a five now <br> <video controls width=200px><source src="./demo/original/s16/pbaa5n.mp4" type="video/mp4"/></video></td>
+<td>S16 (unseen female) <br> place blue at a five now <br> <video controls width=200px><source src="./demo/original/s16/pbaa5n.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s2.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s5.mp4" type="video/mp4"/></video></td>
 <td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s7.mp4" type="video/mp4"/></video></td>
