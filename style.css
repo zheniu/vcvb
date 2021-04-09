@@ -4,7 +4,9 @@ body {
     padding-left: 2em;
 }
 
-table, th, td {
+table,
+th,
+td {
     text-align: center;
     border: 1px solid black;
     border-width: 1px;
@@ -14,7 +16,11 @@ td {
     vertical-align: top;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: verdana;
     font-weight: bold;
     border-bottom: 1px dotted black;
