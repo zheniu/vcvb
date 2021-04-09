@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<h1 id="a-diffusion-model-for-voice-conversion-via-visual-information-bottlenecks-demos">A DIFFUSION MODEL FOR VOICE CONVERSION VIA VISUAL INFORMATION BOTTLENECKS (Demos)</h1>
-<p>Demos are generated only based on the audios of the source speakers. Videos are only for demonstration purposes here.</p>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>A Diffusion Model for Voice Conversion via Visual Information Bottlenecks (Demos)</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+        <link rel="stylesheet" href="style.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+             <header id="title-block-header">
+        <h1 class="title">A Diffusion Model for Voice Conversion via Visual Information Bottlenecks (Demos)</h1>
+                </header>
+        <p>The following demo speeches are generated based source utterances and the one-hot embedding of the target speaker in seen speaker setting (or 10 test utterances of the target speaker in the zero-shot setting).</p>
+<p>The videos shown below are only for demonstration purposes. Click <button @click=toggleVideo>{{ audio_only ? "show videos" : "hide videos" }}</button> to toggle video.</p>
 <h2 id="seen-speaker-setting">1. Seen speaker setting</h2>
 <h3 id="conversion-demos-b-16">1.1. Conversion demos (<span class="math inline"><em>B</em> = 16</span>)</h3>
 <table>
@@ -23,150 +40,127 @@
 <thead>
 <tr class="header">
 <th>Source Speech</th>
-<th>Target S2 (male) <br> <video controls width=200px><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video></th>
-<th>Target S5 (male) <br> <video controls width=200px><source src="./demo/original/s5/bbae8n.mp4" type="video/mp4"/></video></th>
-<th>Target S7 (female) <br> <video controls width=200px><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video></th>
-<th>Target S15 (female) <br> <video controls width=200px><source src="./demo/original/s15/bbad8n.mp4" type="video/mp4"/></video></th>
+<th>Target S2 (male) <br> <audio v-if="audio_only" controls><source src="./demo/original/s2/bbaf1n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video></th>
+<th>Target S5 (male) <br> <audio v-if="audio_only" controls><source src="./demo/original/s5/bbae8n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s5/bbae8n.mp4" type="video/mp4"/></video></th>
+<th>Target S7 (female) <br> <audio v-if="audio_only" controls><source src="./demo/original/s7/bbae6n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video></th>
+<th>Target S15 (female) <br> <audio v-if="audio_only" controls><source src="./demo/original/s15/bbad8n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s15/bbad8n.mp4" type="video/mp4"/></video></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>S1 (male) <br> bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s1/bbaf2n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video> <br> S1 (male) <br> bin blue at f two now</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s5.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s15.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
-<td>S10 (male) <br> lay blue at a two now <br> <video controls width=200px><source src="./demo/original/s10/lbaa2n.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s10/lbaa2n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s10/lbaa2n.mp4" type="video/mp4"/></video> <br> S10 (male) <br> lay blue at a two now</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s5.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s15.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/lbaa2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="odd">
-<td>S4 (female) <br> set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s5.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s15.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s4/swwv6a.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video> <br> S4 (female) <br> set white with v six again</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s5.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s5.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s15.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
-<td>S16 (female) <br> place blue at a five now <br> <video controls width=200px><source src="./demo/original/s16/pbaa5n.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s5.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s15.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s16/pbaa5n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s16/pbaa5n.mp4" type="video/mp4"/></video> <br> S16 (female) <br> place blue at a five now</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s5.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s5.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s15.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/pbaa5n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 </tbody>
 </table>
 <h3 id="effects-of-free-bits">1.2. Effects of free bits</h3>
+<!-- | Source Speech                                                                    | Free Bits <br> (2nd Training Stage) | Target S2 (male) <br> <audio v-if="audio_only" controls><source src="./demo/original/s2/bbaf1n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video>             | Target S7 (female) <br> <audio v-if="audio_only" controls><source src="./demo/original/s7/bbae6n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video>           |
+| -------------------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| S1 (male) <br> bin blue at f two now <br> <audio v-if="audio_only" controls><source src="./demo/original/s1/bbaf2n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video>        | 0                                   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video>   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video>   |
+|                                                                                  | 2                                   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video>   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video>   |
+|                                                                                  | 4                                   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video>   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video>   |
+|                                                                                  | 8                                   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video>   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video>   |
+|                                                                                  | 16                                  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video>  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video>  |
+|                                                                                  | 32                                  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video>  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video>  |
+|                                                                                  | 64                                  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video>  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video>  |
+|                                                                                  | $\infty$                            | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video> | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video> |
+| S4 (female) <br> set white with v six again <br> <audio v-if="audio_only" controls><source src="./demo/original/s4/swwv6a.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video> | 0                                   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video>   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video>   |
+|                                                                                  | 2                                   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video>   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video>   |
+|                                                                                  | 4                                   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video>   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video>   |
+|                                                                                  | 8                                   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video>   | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video>   |
+|                                                                                  | 16                                  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video>  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video>  |
+|                                                                                  | 32                                  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video>  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video>  |
+|                                                                                  | 64                                  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video>  | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video>  |
+|                                                                                  | $\infty$                            | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video> | <audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video> | -->
+<p>The following demos are generated from the models fine-tuned with different free bits for 30k iterations based on the <span class="math inline"><em>B</em> = 8</span> model pre-trained for 200k iterations .</p>
 <table>
 
 <thead>
 <tr class="header">
 <th>Source Speech</th>
-<th>Free Bits <br> (2nd Training Stage)</th>
-<th>Target S2 (male) <br> <video controls width=200px><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video></th>
-<th>Target S7 (female) <br> <video controls width=200px><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video></th>
+<th>Target Speaker</th>
+<th><span class="math inline"><em>B</em> = 0</span></th>
+<th><span class="math inline"><em>B</em> = 2</span></th>
+<th><span class="math inline"><em>B</em> = 4</span></th>
+<th><span class="math inline"><em>B</em> = 8</span></th>
+<th><span class="math inline"><em>B</em> = 16</span></th>
+<th><span class="math inline"><em>B</em> = 32</span></th>
+<th><span class="math inline"><em>B</em> = 64</span></th>
+<th><span class="math inline"><em>B</em> = ∞</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>S1 (male) <br> bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
-<td>0</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s1/bbaf2n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video> <br> S1 (male) <br> bin blue at f two now</td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s2/bbaf1n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video> <br> S2 (male)</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>2</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s7/bbae6n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video> <br> S7 (female)</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/0/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/2/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="odd">
-<td></td>
-<td>4</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/4/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s4/swwv6a.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video><br> S4 (female) <br> set white with v six again</td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s2/bbaf1n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video> <br> S2 (male)</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>8</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/8/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>16</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>32</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/32/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>64</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/64/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><span class="math inline">∞</span></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/inf/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="odd">
-<td>S4 (female) <br> set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
-<td>0</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>2</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>4</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>8</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>16</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>32</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>64</td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><span class="math inline">∞</span></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s7/bbae6n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video> <br> S7 (female)</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/0/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/2/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/4/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/8/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/16/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/32/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/64/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/nomix/cat/bits/inf/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
 </tr>
 </tbody>
 </table>
@@ -177,42 +171,58 @@
 <thead>
 <tr class="header">
 <th>Source Speech</th>
-<th>Target S2 (seen male) <br> <video controls width=200px><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video></th>
-<th>Target S5 (unseen male) <br> <video controls width=200px><source src="./demo/original/s5/bbae8n.mp4" type="video/mp4"/></video></th>
-<th>Target S7 (seen female) <br> <video controls width=200px><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video></th>
-<th>Target S15 (unseen female) <br> <video controls width=200px><source src="./demo/original/s15/bbad8n.mp4" type="video/mp4"/></video></th>
+<th>Target S2 (seen male) <br> <audio v-if="audio_only" controls><source src="./demo/original/s2/bbaf1n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s2/bbaf1n.mp4" type="video/mp4"/></video></th>
+<th>Target S5 (unseen male) <br> <audio v-if="audio_only" controls><source src="./demo/original/s5/bbae8n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s5/bbae8n.mp4" type="video/mp4"/></video></th>
+<th>Target S7 (seen female) <br> <audio v-if="audio_only" controls><source src="./demo/original/s7/bbae6n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s7/bbae6n.mp4" type="video/mp4"/></video></th>
+<th>Target S15 (unseen female) <br> <audio v-if="audio_only" controls><source src="./demo/original/s15/bbad8n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s15/bbad8n.mp4" type="video/mp4"/></video></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>S1 (seen male) <br> bin blue at f two now <br> <video controls width=200px><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s1/bbaf2n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s1/bbaf2n.mp4" type="video/mp4"/></video> <br> S1 (seen male) <br> bin blue at f two now</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s5.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s15.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/bbaf2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
-<td>S10 (unseen male) <br> lay blue at a two now <br> <video controls width=200px><source src="./demo/original/s10/lbaa2n.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s10/lbaa2n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s10/lbaa2n.mp4" type="video/mp4"/></video> <br> S10 (unseen male) <br> lay blue at a two now</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s5.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s5.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s15.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/lbaa2n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="odd">
-<td>S4 (seen female) <br> set white with v six again <br> <video controls width=200px><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s5.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s15.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s4/swwv6a.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s4/swwv6a.mp4" type="video/mp4"/></video> <br> S4 (seen female) <br> set white with v six again</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s5.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s5.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s15.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/swwv6a/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 <tr class="even">
-<td>S16 (unseen female) <br> place blue at a five now <br> <video controls width=200px><source src="./demo/original/s16/pbaa5n.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s2.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s5.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s7.mp4" type="video/mp4"/></video></td>
-<td><video controls width=200px><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s15.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/original/s16/pbaa5n.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/original/s16/pbaa5n.mp4" type="video/mp4"/></video> <br> S16 (unseen female) <br> place blue at a five now</td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s2.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s2.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s5.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s5.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s7.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s7.mp4" type="video/mp4"/></video></td>
+<td><audio v-if="audio_only" controls><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s15.wav" type="audio/mpeg"/></audio> <video v-else controls><source src="./demo/converted/grid/0shot/cat/rgb/pbaa5n/50-steps/s15.mp4" type="video/mp4"/></video></td>
 </tr>
 </tbody>
 </table>
-</body>
+    </div>
+    
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            audio_only: false,
+          };
+        },
+        methods: {
+          toggleVideo() {
+            this.audio_only = !this.audio_only;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
 </html>
